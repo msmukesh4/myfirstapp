@@ -1,23 +1,23 @@
-import React, {Component} from 'react';
-import {ScrollView} from 'react-native';
+import React, { Component } from 'react';
+import { ScrollView } from 'react-native';
 import AlbumDetail from './AlbumDetail';
 
-class Album extends Component{
+class Album extends Component {
   state = { albums: [] };
-  componentWillMount(){
+  componentWillMount() {
     console.log('component started mounting');
     fetch('https://rallycoding.herokuapp.com/api/music_albums')
       .then(response => response.json())
-      .then(data => this.setState({albums: data}));
+      .then(data => this.setState({ albums: data }));
   }
   renderAlbums() {
     return this.state.albums.map(album =>
-      <AlbumDetail key={album.title} album={album}/>
+      <AlbumDetail key={album.title} album={album} />
     );
   }
-  render(){
+  render() {
     console.log(this.state);
-    return(
+    return (
       <ScrollView>
         {this.renderAlbums()}
       </ScrollView>

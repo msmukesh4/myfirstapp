@@ -1,16 +1,14 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
-const ButtonCustom = (props) => {
-  return(
+const ButtonCustom = (props) => (
     <TouchableOpacity onPress={props.onPress} style={styles.buttonStyle}>
       <Text style={styles.buttonTextStyle}>{props.buttonText}</Text>
     </TouchableOpacity>
   );
-};
 
 const styles = {
-  buttonStyle : {
+  buttonStyle: {
     flex: 1,
     alignSelf: 'stretch',
     backgroundColor: '#FFF',
@@ -28,6 +26,6 @@ const styles = {
     paddingTop: 10,
     paddingBottom: 10
   }
-}
+};
 
 export default ButtonCustom;

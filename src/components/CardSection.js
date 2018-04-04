@@ -1,13 +1,11 @@
 import React from 'react';
-import { View,Text } from 'react-native';
+import { View } from 'react-native';
 
-const CardSection = (props) => {
-  return(
+const CardSection = (props) => (
     <View style={styles.cardSectionStyle}>
       {props.children}
     </View>
   );
-};
 
 const styles = {
   cardSectionStyle: {

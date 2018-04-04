@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text, Image, Button, Linking} from 'react-native';
+import { View, Text, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import ButtonCustom from './ButtonCustom';
 
 const AlbumDetail = (props) => {
-
   const {
     thumbnailStyle,
     headerTextStyle,
@@ -14,16 +13,14 @@ const AlbumDetail = (props) => {
     bodyImage
   } = styles;
 
-  return(
+  return (
     <Card>
-
-      // header section
       <CardSection>
         <View style={thumbnailContainerStyle}>
           <Image
             style={thumbnailStyle}
-            source={{ uri: props.album.thumbnail_image}}
-            />
+            source={{ uri: props.album.thumbnail_image }}
+          />
         </View>
         <View style={headerDetailsStyle}>
           <Text style={headerTextStyle}>{props.album.title}</Text>
@@ -31,24 +28,23 @@ const AlbumDetail = (props) => {
         </View>
       </CardSection>
 
-      // Image
       <CardSection>
         <Image
           style={bodyImage}
-          source={{ uri: props.album.image}}
-          />
+          source={{ uri: props.album.image }}
+        />
       </CardSection>
 
-      //buttom section
+      { /*buttom section */}
       <CardSection>
-        <ButtonCustom onPress={() => Linking.openURL(props.album.url)} buttonText={'Buy Now'}/>
+        <ButtonCustom onPress={() => Linking.openURL(props.album.url)} buttonText={'Buy Now'} />
       </CardSection>
     </Card>
   );
-}
+};
 
 const styles = {
-  headerDetailsStyle :{
+  headerDetailsStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around'
   },
@@ -70,6 +66,6 @@ const styles = {
     flex: 1,
     width: null
   }
-}
+};
 
 export default AlbumDetail;
